@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardTodo"
+        android:id="@+id/cardContato"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
@@ -19,102 +20,80 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/containerCard"
             android:layout_width="match_parent"
-
-
             android:layout_height="wrap_content"
             android:padding="20dp">
 
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guidelineBetweenCheck"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.85" />
-
-
             <TextView
-                android:id="@+id/titleTodo"
+                android:id="@+id/contatoNome"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Title"
                 android:textAlignment="textStart"
-                android:textSize="22dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineBetweenCheck"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Daniel Souza" />
 
             <TextView
-                android:id="@+id/todoTaskDescription"
+                android:id="@+id/contatoTelefone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Descrição do card onde fala sobre a atividade que está pendente"
                 android:textAlignment="textStart"
-                android:textColor="#5e5f5f"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineBetweenCheck"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/titleTodo" />
+                app:layout_constraintTop_toBottomOf="@id/contatoNome"
+                tools:text="(11) 91234-5678" />
 
+            <TextView
+                android:id="@+id/contatoObservacao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contatoTelefone"
+                tools:text="Colega da faculdade" />
 
             <TextView
                 android:id="@+id/actionView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Visualizar"
+                android:text="@string/contato_action_view"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/actionDelete"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/barrierDescription" />
-
+                app:layout_constraintTop_toBottomOf="@id/contatoObservacao" />
 
             <TextView
                 android:id="@+id/actionDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Deletar"
+                android:text="@string/contato_action_delete"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/actionView"
-                app:layout_constraintTop_toBottomOf="@+id/barrierDescription" />
-
-
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/todoCheck"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/barrierDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="todoTaskDescription" />
-
-
-
+                app:layout_constraintTop_toBottomOf="@id/contatoObservacao" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </com.google.android.material.card.MaterialCardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

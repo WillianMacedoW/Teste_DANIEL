@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailsRoot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -14,12 +14,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="App Todo"
+        app:title="Agenda de Contatos"
         app:titleTextColor="@color/white" />
 
-
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardTodo"
+        android:id="@+id/cardContato"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
@@ -30,44 +29,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/containerCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp">
 
-
             <TextView
-                android:id="@+id/idTodo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="1" />
-
-
-            <TextView
-                android:id="@+id/todoTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/idTodo"
-                tools:text="Title" />
-
-
-            <TextView
-                android:id="@+id/taskDescription"
+                android:id="@+id/contatoId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
@@ -76,14 +45,64 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/todoTitle"
-                tools:text="Description" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="#1" />
 
+            <TextView
+                android:id="@+id/contatoNome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contatoId"
+                tools:text="Daniel Souza" />
+
+            <TextView
+                android:id="@+id/contatoTelefone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contatoNome"
+                tools:text="Telefone: (11) 91234-5678" />
+
+            <TextView
+                android:id="@+id/contatoEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contatoTelefone"
+                tools:text="E-mail: daniel.souza@example.com" />
+
+            <TextView
+                android:id="@+id/contatoObservacao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contatoEmail"
+                tools:text="Observação: Colega da faculdade" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </com.google.android.material.card.MaterialCardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
