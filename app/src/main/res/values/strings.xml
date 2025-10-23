@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Todo-list</string>
+    <string name="app_name">Agenda de Contatos</string>
+    <string name="contato_id_format">Contato #%1$d</string>
+    <string name="contato_phone">Telefone: %1$s</string>
+    <string name="contato_email">E-mail: %1$s</string>
+    <string name="contato_observacao">Observação: %1$s</string>
+    <string name="contato_deleted_success">Contato removido com sucesso.</string>
+    <string name="contato_action_view">Visualizar</string>
+    <string name="contato_action_delete">Excluir</string>
 </resources>

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.todo_list"
+    namespace = "com.example.agenda_contatos"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.todo_list"
+        applicationId = "com.example.agenda_contatos"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

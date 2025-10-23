@@ -1,4 +1,4 @@
-package com.example.todo_list
+package com.example.agenda_contatos
 
 import org.junit.Test
 
