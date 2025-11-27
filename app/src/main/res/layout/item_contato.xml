@@ -63,35 +63,6 @@
                 app:layout_constraintTop_toBottomOf="@id/contatoTelefone"
                 tools:text="Colega da faculdade" />
 
-            <TextView
-                android:id="@+id/actionView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/contato_action_view"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/actionDelete"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/contatoObservacao" />
-
-            <TextView
-                android:id="@+id/actionDelete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/contato_action_delete"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/actionView"
-                app:layout_constraintTop_toBottomOf="@id/contatoObservacao" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
