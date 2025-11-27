@@ -4,7 +4,18 @@
     <string name="contato_phone">Telefone: %1$s</string>
     <string name="contato_email">E-mail: %1$s</string>
     <string name="contato_observacao">Observação: %1$s</string>
-    <string name="contato_deleted_success">Contato removido com sucesso.</string>
-    <string name="contato_action_view">Visualizar</string>
-    <string name="contato_action_delete">Excluir</string>
+    <string name="contato_detail_title">Detalhes do contato</string>
+    <string name="contato_form_title">Salvar contato</string>
+    <string name="delete_contato_title">Remover contato</string>
+    <string name="delete_contato_message">Deseja remover %1$s?</string>
+    <string name="action_delete">Excluir</string>
+    <string name="action_editar">Editar</string>
+    <string name="action_novo">Novo contato</string>
+    <string name="action_salvar">Salvar</string>
+    <string name="label_nome">Nome</string>
+    <string name="label_telefone">Telefone</string>
+    <string name="label_email">E-mail</string>
+    <string name="label_observacao">Observação</string>
+    <string name="empty_list">Nenhum contato cadastrado ainda.</string>
+    <string name="contact_not_found">Contato não encontrado.</string>
 </resources>

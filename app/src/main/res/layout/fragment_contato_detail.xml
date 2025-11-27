@@ -2,35 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/detailsRoot"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#669df6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Agenda de Contatos"
-        app:titleTextColor="@color/white" />
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".ui.detail.ContatoDetailFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardContato"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="14dp"
-        android:backgroundTint="@color/cardview_light_background"
-        android:elevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toTopOf="@id/actionEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/containerCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp">
@@ -39,7 +26,6 @@
                 android:id="@+id/contatoId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -52,7 +38,7 @@
                 android:id="@+id/contatoNome"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:layout_marginTop="8dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -66,7 +52,7 @@
                 android:id="@+id/contatoTelefone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:layout_marginTop="8dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -79,7 +65,7 @@
                 android:id="@+id/contatoEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:layout_marginTop="8dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -92,7 +78,7 @@
                 android:id="@+id/contatoObservacao"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:layout_marginTop="8dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -100,9 +86,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/contatoEmail"
                 tools:text="Observação: Colega da faculdade" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/actionEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/action_editar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardContato" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
