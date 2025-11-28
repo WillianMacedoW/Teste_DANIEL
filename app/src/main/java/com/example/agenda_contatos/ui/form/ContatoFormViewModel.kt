@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asFlow
 import androidx.lifecycle.viewModelScope
 import com.example.agenda_contatos.AgendaApp
+import com.example.agenda_contatos.R
 import com.example.agenda_contatos.data.Contato
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
@@ -24,13 +25,16 @@ class ContatoFormViewModel(application: Application) : AndroidViewModel(applicat
     private val _saved = MutableLiveData(false)
     val saved: LiveData<Boolean> = _saved
 
+    private val _erro = MutableLiveData<String?>()
+    val erro: LiveData<String?> = _erro
+
     fun loadContato(contatoId: Int) {
         if (contatoId < 0) return
 
         viewModelScope.launch {
             repository.getContato(contatoId)
                 .asFlow()
-                .firstOrNull { it != null }
+                .firstOrNull()
                 ?.let { contato ->
                     currentId = contato.id
                     nome.postValue(contato.nome)
@@ -42,17 +46,35 @@ class ContatoFormViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun salvarContato() {
+        val nomeAtual = nome.value.orEmpty().trim()
+        val telefoneAtual = telefone.value.orEmpty().trim()
+        val emailAtual = email.value.orEmpty().trim()
+        val observacaoAtual = observacao.value.orEmpty().trim()
+
+        if (nomeAtual.isBlank() || telefoneAtual.isBlank()) {
+            _erro.value = getApplication<Application>().getString(R.string.error_nome_telefone_obrigatorios)
+            return
+        }
+
         val contato = Contato(
             id = currentId,
-            nome = nome.value.orEmpty(),
-            telefone = telefone.value.orEmpty(),
-            email = email.value.orEmpty(),
-            observacao = observacao.value.orEmpty(),
+            nome = nomeAtual,
+            telefone = telefoneAtual,
+            email = emailAtual,
+            observacao = observacaoAtual,
         )
 
         viewModelScope.launch {
             repository.save(contato)
             _saved.postValue(true)
         }
+    }
+
+    fun consumirErro() {
+        _erro.value = null
+    }
+
+    fun resetarEstadoSalvo() {
+        _saved.value = false
     }
 }

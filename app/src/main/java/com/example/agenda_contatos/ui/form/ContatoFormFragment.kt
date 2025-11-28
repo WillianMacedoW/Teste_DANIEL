@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.agenda_contatos.databinding.FragmentContatoFormBinding
+import com.google.android.material.snackbar.Snackbar
 
 class ContatoFormFragment : Fragment() {
 
@@ -41,6 +42,14 @@ class ContatoFormFragment : Fragment() {
         viewModel.saved.observe(viewLifecycleOwner) { saved ->
             if (saved) {
                 findNavController().navigateUp()
+                viewModel.resetarEstadoSalvo()
+            }
+        }
+
+        viewModel.erro.observe(viewLifecycleOwner) { mensagem ->
+            mensagem?.let {
+                Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show()
+                viewModel.consumirErro()
             }
         }
     }

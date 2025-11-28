@@ -39,10 +39,16 @@ class ContatoDetailFragment : Fragment() {
 
         viewModel.getContato(args.contatoId).observe(viewLifecycleOwner) { contato ->
             if (contato == null) {
+                binding.contatoId.text = ""
                 binding.contatoNome.text = getString(R.string.contact_not_found)
+                binding.contatoTelefone.text = ""
+                binding.contatoEmail.text = ""
+                binding.contatoObservacao.text = ""
+                binding.actionEdit.isEnabled = false
                 return@observe
             }
 
+            binding.actionEdit.isEnabled = true
             binding.contatoId.text = getString(R.string.contato_id_format, contato.id)
             binding.contatoNome.text = contato.nome
             binding.contatoTelefone.text = getString(R.string.contato_phone, contato.telefone)
