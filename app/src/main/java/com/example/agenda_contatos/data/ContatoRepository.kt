@@ -2,14 +2,20 @@ package com.example.agenda_contatos.data
 
 import androidx.lifecycle.LiveData
 import com.example.agenda_contatos.data.local.ContatoDao
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
-class ContatoRepository(private val dao: ContatoDao) {
+class ContatoRepository(
+    private val dao: ContatoDao,
+    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
+) {
 
     val contatos: LiveData<List<Contato>> = dao.getContatos()
 
     fun getContato(id: Int): LiveData<Contato?> = dao.getContato(id)
 
-    suspend fun save(contato: Contato) {
+    suspend fun save(contato: Contato) = withContext(ioDispatcher) {
         if (contato.id == 0) {
             dao.insert(contato)
         } else {
@@ -17,11 +23,11 @@ class ContatoRepository(private val dao: ContatoDao) {
         }
     }
 
-    suspend fun delete(contato: Contato) {
+    suspend fun delete(contato: Contato) = withContext(ioDispatcher) {
         dao.delete(contato)
     }
 
-    suspend fun ensureSeedData() {
+    suspend fun ensureSeedData() = withContext(ioDispatcher) {
         if (dao.count() == 0) {
             dao.insertAll(
                 listOf(
