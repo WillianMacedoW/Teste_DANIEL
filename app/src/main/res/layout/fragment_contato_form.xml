@@ -13,14 +13,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
+        android:background="@color/black_background"
         tools:context=".ui.form.ContatoFormFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- NOME -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutNome"
+                style="@style/GoldTextInput"
+                app:boxBackgroundMode="outline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/label_nome"
@@ -31,14 +35,18 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:inputType="textPersonName"
                     android:text="@={viewModel.nome}"
                     tools:text="Daniel Souza" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- TELEFONE -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutTelefone"
+                style="@style/GoldTextInput"
+                app:boxBackgroundMode="outline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -50,14 +58,18 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:inputType="phone"
                     android:text="@={viewModel.telefone}"
                     tools:text="(11) 91234-5678" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- EMAIL -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutEmail"
+                style="@style/GoldTextInput"
+                app:boxBackgroundMode="outline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -69,14 +81,18 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:inputType="textEmailAddress"
                     android:text="@={viewModel.email}"
                     tools:text="daniel.souza@example.com" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- OBSERVAÇÃO -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutObservacao"
+                style="@style/GoldTextInput"
+                app:boxBackgroundMode="outline"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -88,6 +104,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:inputType="textMultiLine"
                     android:minLines="3"
                     android:text="@={viewModel.observacao}"
@@ -95,12 +112,15 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- BOTÃO SALVAR -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/actionSalvar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_salvar"
+                android:backgroundTint="@color/gold_primary"
+                android:textColor="@color/black_primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layoutObservacao" />

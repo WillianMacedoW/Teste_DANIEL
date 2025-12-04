@@ -1,9 +1,33 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.AgendaContatos" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <!-- Base do Tema - Material 3 -->
+    <style name="Base.Theme.AgendaContatos" parent="Theme.Material3.Dark.NoActionBar">
+
+        <!-- Cores principais -->
+        <item name="colorPrimary">@color/black_primary</item>
+        <item name="colorOnPrimary">@color/gold_primary</item>
+
+        <item name="colorSecondary">@color/gold_primary</item>
+        <item name="colorOnSecondary">@color/black_primary</item>
+
+        <!-- Background geral -->
+        <item name="android:windowBackground">@color/black_background</item>
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/white</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/black_primary</item>
+        <item name="android:navigationBarColor">@color/black_primary</item>
+
+        <!-- Textos padrão -->
+        <item name="colorOnBackground">@color/white</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="Theme.AgendaContatos" parent="Base.Theme.AgendaContatos" />
+    <!-- Tema aplicado -->
+    <style name="Theme.AgendaContatos" parent="Base.Theme.AgendaContatos">
+        <!-- Estilo Global do FAB -->
+        <item name="floatingActionButtonStyle">@style/GoldFab</item>
+    </style>
+
 </resources>
